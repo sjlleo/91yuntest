@@ -96,16 +96,8 @@ do
 done    
 
 
-#上传文件
-updatefile()
-{
-	resultstr=$(curl -s -T ${dir}/$logfilename "http://logfileupload.91yuntest.com/logfileupload.php")
-	echo -e $resultstr | tee -a ${dir}/$logfilename
-}
-
 if [[ $upfile == "y" ]]
 then
-	updatefile
 else
 	echo "测试结束，具体日志查看 91yuntest.log"
 fi
